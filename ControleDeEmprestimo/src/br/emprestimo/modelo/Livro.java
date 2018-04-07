@@ -1,3 +1,4 @@
+
 package br.emprestimo.modelo;
 
 
@@ -18,12 +19,18 @@ public class Livro {
 		return titulo;
 	}
 	public void setTitulo(String titulo) {
+		if (titulo == "" | titulo == null){
+			throw new RuntimeException("Titulo invalido");
+		}
 		this.titulo = titulo;
 	}
 	public String getAutor() {
 		return autor;
 	}
 	public void setAutor(String autor) {
+		if (autor == "" | autor == null){
+			throw new RuntimeException("Autor  invalido");
+		}
 		this.autor = autor;
 	}
 

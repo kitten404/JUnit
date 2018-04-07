@@ -31,6 +31,7 @@ public class UC01RegistraEmprestimoDeLivro {
 		usuario.setRa("11111");
 		usuario.setNome("Jose da Silva");
 		servico = new ServicoEmprestimo();
+		emprestimo = new Emprestimo();
 	}
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
@@ -63,7 +64,16 @@ public class UC01RegistraEmprestimoDeLivro {
 	    assertTrue(dataEsperada.equals(dataObtida));
 	}
 	@Test
-	public void CT05UC01FB_registrar_emprestimo_com_data_invalida() {
-		assertTrue(emprestimo.validaData("29-03-2000"));
+	public void CT05_registrarEmprestimoDadoInvalido(){
+		assertFalse(emprestimo.validaData("30/02/2000"));
 	}
+	@Test
+	public void CT05UC01FB_registrar_emprestimo_com_data_InValida() {
+		assertFalse(emprestimo.validaData("29/03/2000"));
+	}
+	@Test 
+	public void CT06RegEmprestimoDtaInvalida(){
+		assertTrue(emprestimo.validaData("29/03/2000"));
+	}
+
 }
