@@ -1,4 +1,4 @@
-package br.emprestimo.modelo;
+ package br.emprestimo.modelo;
 
 import java.text.DateFormat;
 import java.text.ParseException;
